@@ -8,8 +8,6 @@ services:
     deploy:
       replicas: 4
     
-    image_pull_policy: always
-    
     expose:
       - 1800  
     networks:
