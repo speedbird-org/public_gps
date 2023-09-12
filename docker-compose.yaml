@@ -9,7 +9,8 @@ services:
       replicas: 4
       placement:
         constraints:
-          - node.labels.node-type == gps1 # Replace 'gps-server' with your actual node labels
+          # - node.labels.node-type == gps1
+          - node.hostname == gps1
   
     expose:
       - 1800  
@@ -24,7 +25,8 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.node-type == my-shell-droplet # Replace 'load-balancer' with your actual node labels
+          # - node.labels.node-type == my-shell-droplet
+          - node.hostname == my-shell-droplet
   
     ports:
       - 1800:1800
