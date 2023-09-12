@@ -10,7 +10,8 @@ services:
       placement:
         constraints:
           # - node.labels.node-type == gps1
-          - node.hostname == gps1
+          # - node.hostname == gps1
+          - node.role == worker
   
     expose:
       - 1800  
@@ -26,7 +27,8 @@ services:
       placement:
         constraints:
           # - node.labels.node-type == my-shell-droplet
-          - node.hostname == my-shell-droplet
+          # - node.hostname == my-shell-droplet
+          - node.role == manager
   
     ports:
       - 1800:1800
