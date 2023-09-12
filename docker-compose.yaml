@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    image: registry.digitalocean.com/fleettrack-registry/gps:latest
+#    ports:
+#      - "1800:1800"
+    deploy:
+      replicas: 4
+    
+    image_pull_policy: always
+    
+    expose:
+      - 1800  
+    networks:
+      - webnet
+
+networks:
+  webnet:
