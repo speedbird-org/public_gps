@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   
-  nginx:
+  nginx-lb:
     image: nginx:latest
     volumes:
       - ./lb-nginx.conf:/etc/nginx/nginx.conf
