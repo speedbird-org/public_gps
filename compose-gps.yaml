@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  web:
+    image: registry.digitalocean.com/fleettrack-registry/gps:latest
+    deploy:
+      replicas: 4
+      placement:
+        constraints:
+          # - node.labels.node-type == gps1
+          # - node.hostname == gps1
+          - node.role == worker
+  
+    expose:
+      - 1800  
+    networks:
+      - webnet
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          # - node.labels.node-type == my-shell-droplet
+          # - node.hostname == my-shell-droplet
+          - node.role == worker
+  
+    ports:
+      - 1800:1800
+    depends_on:
+      - web
+
+networks:
+  webnet:
