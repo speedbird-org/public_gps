@@ -1,10 +1,10 @@
 version: '3.8'
 
 services:
-  web:
+  app:
     image: registry.digitalocean.com/fleettrack-registry/gps:latest
     deploy:
-      replicas: 4
+      replicas: 2
       # placement:
       #   constraints:
       #     - node.role == worker
@@ -12,7 +12,7 @@ services:
     expose:
       - 1800  
     networks:
-      - webnet
+      - gpsnet
 
   nginx:
     image: nginx:latest
@@ -29,7 +29,7 @@ services:
     ports:
       - 1800:1800
     networks:
-      - webnet
+      - gpsnet
 
 networks:
-  webnet:
+  gpsnet:
