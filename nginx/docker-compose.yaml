@@ -5,9 +5,9 @@ services:
     image: registry.digitalocean.com/fleettrack-registry/gps:latest
     deploy:
       replicas: 4
-      # placement:
-      #   constraints:
-      #     - node.role == worker
+      placement:
+        constraints:
+          - node.role == worker
   
     expose:
       - 1800  
