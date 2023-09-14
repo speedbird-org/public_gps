@@ -25,7 +25,6 @@ services:
     expose:
       - 1800
     networks:
-      - frontend
       - backend
 
 networks:
