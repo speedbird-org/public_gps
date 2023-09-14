@@ -19,7 +19,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     deploy:
-      replicas: 1
+      replicas: 2
       placement:
         constraints:
           # - node.labels.node-type == my-shell-droplet
