@@ -5,9 +5,9 @@ services:
     image: registry.digitalocean.com/fleettrack-registry/gps:latest
     deploy:
       replicas: 4
-      placement:
-        constraints:
-          - node.role == worker
+      # placement:
+      #   constraints:
+      #     - node.role == worker
   
     expose:
       - 1800  
@@ -20,9 +20,9 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     deploy:
       replicas: 1
-      placement:
-        constraints:
-          - node.role == manager
+      # placement:
+      #   constraints:
+      #     - node.role == manager
   
     ports:
       - 1800:1800
