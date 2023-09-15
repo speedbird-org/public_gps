@@ -19,7 +19,7 @@ services:
       - backend
 
   app:
-    image: registry.digitalocean.com/fleettrack-registry/gps:latest
+    image: registry.digitalocean.com/fleettrack/test:latest
     deploy:
       replicas: 3
     expose:
