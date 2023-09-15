@@ -23,6 +23,8 @@ services:
       placement:
         constraints:
           - node.role == manager
+    depends_on:
+      - app
   
     ports:
       - 1800:1800

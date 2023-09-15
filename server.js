@@ -28,7 +28,7 @@ const server = net.createServer((socket) => {
 
 
 server.listen(port, () => {
-    log(`TCP Stream Server listening on port ${port}. Name:${SERVER_NAME}`);
+    log(`Version 3: TCP Stream Server listening on port ${port}. Name:${SERVER_NAME}`);
 });
 
 function log(str){
