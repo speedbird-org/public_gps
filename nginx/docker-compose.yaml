@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   app:
-    image: registry.digitalocean.com/fleettrack/test:latest
+    # image: registry.digitalocean.com/fleettrack/test:latest
+    image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
     deploy:
       replicas: 4
       # placement:
