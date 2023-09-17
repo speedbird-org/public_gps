@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gps
+spec:
+  replicas: 2
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: gps
+  template: 
+    metadata:
+      labels:
+        app: gps
+    spec:
+      containers:
+        - name: gps-container
+          image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
+          # imagePullPolicy: Never
+          ports:
+            - containerPort: 1800
+
+---
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-gps
+spec:
+  type: LoadBalancer
+  # type: NodePort
+  selector:
+    app: gps
+  ports:
+    - protocol: TCP
+      port: 1800
+      targetPort: 1800
+      # nodePort: 31800
