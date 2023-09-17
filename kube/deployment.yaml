@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: gps
 spec:
-  replicas: 2
+  replicas: 4
   revisionHistoryLimit: 0
   selector:
     matchLabels:
