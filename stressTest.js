@@ -4,7 +4,7 @@ const SERVER_IP = '142.93.221.10'; //docker swarm entry point
 const SERVER_PORT = 1800;
 
 
-const CONNECTIONS = 4000;
+const CONNECTIONS = 2000;
 
 let serverCount = 1;
 
