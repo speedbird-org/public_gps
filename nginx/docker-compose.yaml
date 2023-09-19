@@ -5,7 +5,10 @@ services:
     # image: registry.digitalocean.com/fleettrack/test:latest
     image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
     deploy:
-      replicas: 20
+      replicas: 4
+      resources:
+      limits:
+        memory: 512M
       # placement:
       #   constraints:
       #     - node.role == worker
