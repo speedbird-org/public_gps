@@ -28,7 +28,8 @@ const server = net.createServer((socket) => {
 
 
 server.listen(port, () => {
-    log(`Version 6:TCP Stream Server listening on port ${port}. Name:${SERVER_NAME}`);
+    const TASK_ID = process.env.TASK_ID;
+    log(`Version 6:TCP Stream Server listening on port ${port}. Name:${SERVER_NAME} TaskId: ${TASK_ID}`);
 });
 
 function log(str){

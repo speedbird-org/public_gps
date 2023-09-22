@@ -8,4 +8,4 @@ COPY package*.json ./
 RUN npm install --production
 COPY --chown=node:node . .
 
-CMD ["node","server.js"]
+# CMD ["node","server.js"]

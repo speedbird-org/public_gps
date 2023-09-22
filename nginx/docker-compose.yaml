@@ -1,20 +1,23 @@
-version: '3.8'
+version: "3.8"
 
 services:
   app:
     # image: registry.digitalocean.com/fleettrack/test:latest
     image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
+    environment:
+      TASK_ID: "{{.Task.Slot}}"
+    command: node server.js
     deploy:
       replicas: 4
-      resources:
-        limits:
-          memory: 512M
+      # resources:
+      #   limits:
+      #     memory: 512M
       # placement:
       #   constraints:
       #     - node.role == worker
-  
+
     expose:
-      - 1800  
+      - 1800
     networks:
       - gpsnet
 
@@ -32,7 +35,7 @@ services:
       #     - node.role == manager
     depends_on:
       - app
-  
+
     ports:
       - 1800:1800
     networks:
