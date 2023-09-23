@@ -31,9 +31,9 @@ services:
       resources:
         limits:
           memory: 50M
-      # placement:
-      #   constraints:
-      #     - node.role == manager
+      placement:
+        constraints:
+          - node.labels.lb == yes
     depends_on:
       - app
 
