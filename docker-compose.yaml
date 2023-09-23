@@ -24,7 +24,7 @@ services:
     # volumes:
     #   - ./nginx.conf:/etc/nginx/nginx.conf
     configs:
-      - source: nginx-config
+      - source: nginx_config
         target: /etc/nginx/nginx.conf
     deploy:
       replicas: 1
@@ -42,7 +42,7 @@ services:
       - gpsnet
 
 configs:
-  nginx-config:
+  nginx_config:
     file: ./nginx.conf
     
 networks:
