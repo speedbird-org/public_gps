@@ -15,7 +15,7 @@ services:
       placement:
         constraints:
           # - node.role == worker
-          - node.labels.manager === yes
+          - node.labels.manager == yes
 
     expose:
       - 1800
