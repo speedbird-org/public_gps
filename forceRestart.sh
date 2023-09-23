@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./remove.sh
+./delCluster.sh
 
 sleep 15;
 
