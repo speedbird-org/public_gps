@@ -1,6 +1,6 @@
 #!/bin/bash
 
-../remove.sh
+./remove.sh
 
 sleep 15;
 
