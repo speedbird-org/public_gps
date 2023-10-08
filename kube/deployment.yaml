@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: gps
-  template: 
+  template:
     metadata:
       labels:
         app: gps
@@ -16,7 +16,7 @@ spec:
       containers:
         - name: gps-container
           image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
-          # imagePullPolicy: Never
+          command: ["node", "server.js"]
           ports:
             - containerPort: 1800
 
@@ -35,4 +35,4 @@ spec:
       targetPort: 1800
       # nodePort: 31800
   externalIPs:
-     - 139.59.44.250
+    - 139.59.44.250

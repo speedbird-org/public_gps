@@ -1,10 +1,15 @@
 #!/bin/bash
 
-# docker build -t registry.digitalocean.com/fleettrack/test .
-# docker push registry.digitalocean.com/fleettrack/test
+git add --all
+if [[ -z "$1" ]]
+then
+  git commit -m "Quick commit"
+else
+  git commit -m "$1"
+fi
+git push
 
-bb.sh "$1"
 
 docker build -t asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test .
 
-docker push asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test
+docker push asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test   
