@@ -17,9 +17,14 @@ spec:
         - name: gps-container
           image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
           env:
-            - name: TASK_ID
+            # - name: TASK_ID
               # value: "1"
-              value: "{{.metadata.labels['apps.kubernetes.io/pod-index']}}"
+              # value: {{.metadata.labels['apps.kubernetes.io/pod-index']}}
+          - name: TASK_ID
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.labels['apps.kubernetes.io/pod-index']
+                
           command: ["node", "server.js"]
           imagePullPolicy: Always
           ports:
