@@ -1,6 +1,6 @@
 const net = require('net');
 
-const SERVER_IP = '142.93.221.10'; //docker swarm entry point
+const SERVER_IP = '139.59.44.250'; //docker swarm entry point
 const SERVER_PORT = 1800;
 
 

@@ -16,6 +16,9 @@ spec:
       containers:
         - name: gps-container
           image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
+          env:
+            - name: TASK_ID
+              value: 0
           command: ["node", "server.js"]
           # imagePullPolicy: Never
           ports:
