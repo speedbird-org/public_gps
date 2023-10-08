@@ -18,9 +18,9 @@ spec:
           image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
           env:
             - name: TASK_ID
-              value: "0"
+              value: "1"
           command: ["node", "server.js"]
-          # imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 1800
       imagePullSecrets:
