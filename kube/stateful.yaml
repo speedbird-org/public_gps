@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: gps
+spec:
+  replicas: 4
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: gps
+  template:
+    metadata:
+      labels:
+        app: gps
+    spec:
+      containers:
+        - name: gps-container
+          image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
+          env:
+            - name: TASK_ID
+              value: "1"
+          command: ["node", "server.js"]
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 1800
+      imagePullSecrets:
+        - name: gcr-secret
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-gps
+spec:
+  type: LoadBalancer
+  selector:
+    app: gps
+  ports:
+    - protocol: TCP
+      port: 1800
+      targetPort: 1800
+      # nodePort: 31800
+  externalIPs:
+    - 139.59.44.250
