@@ -4,6 +4,7 @@ metadata:
   name: gps
 spec:
   replicas: 4
+  podManagementPolicy: Parallel
   revisionHistoryLimit: 0
   selector:
     matchLabels:
