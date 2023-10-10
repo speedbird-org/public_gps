@@ -26,6 +26,13 @@ spec:
                 fieldPath: metadata.labels['apps.kubernetes.io/pod-index']
 
           command: ["node", "server.js"]
+          resources:
+            # requests:
+            #   memory: "64Mi"
+            #   cpu: "250m"
+            limits:
+              memory: "15Mi"
+              # cpu: "500m"
           imagePullPolicy: Always
           ports:
             - containerPort: 1800
