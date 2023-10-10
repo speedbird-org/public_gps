@@ -3,6 +3,7 @@ const port = 1800;
 
 const SERVER_NAME = process.env.TASK_ID;
 
+let memoryLeak = [];
 
 const server = net.createServer((socket) => {
     // This function will be called when a client connects to the server.
@@ -13,6 +14,7 @@ const server = net.createServer((socket) => {
     socket.on('data', (data) => {
         log(`Received data: ${data}`);
         socket.write(data);
+        memoryLeak.push(data);
     });
 
     // Handle the client disconnecting

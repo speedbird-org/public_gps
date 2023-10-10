@@ -31,7 +31,7 @@ spec:
             #   memory: "64Mi"
             #   cpu: "250m"
             limits:
-              memory: "15Mi"
+              memory: "50Mi"
               # cpu: "500m"
           imagePullPolicy: Always
           ports:
