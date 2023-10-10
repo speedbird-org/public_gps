@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: gps
 spec:
-  replicas: 4
+  replicas: 2
   podManagementPolicy: Parallel
   revisionHistoryLimit: 0
   selector:
