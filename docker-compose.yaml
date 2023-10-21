@@ -40,7 +40,7 @@ services:
         window: 120s
       resources:
         limits:
-          memory: 40M
+          memory: 50M
     # deploy:
     #   restart_policy:
     #     condition: on-failure
