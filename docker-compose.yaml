@@ -9,9 +9,9 @@ services:
     command: node server.js
     deploy:
       replicas: 2
-      resources:
-        limits:
-          memory: 30M
+      # resources:
+      #   limits:
+      #     memory: 30M
       # placement:
         # constraints:
           # - node.role == worker
@@ -31,9 +31,9 @@ services:
         target: /etc/nginx/nginx.conf
     deploy:
       replicas: 1
-      # resources:
-      #   limits:
-      #     memory: 50M
+      resources:
+        limits:
+          memory: 50M
       # placement:
       #   constraints:
       #     - node.labels.lb == yes
