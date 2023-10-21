@@ -36,7 +36,7 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 30M
+          memory: 40M
         reservations:
           memory: 5M
       # placement:
