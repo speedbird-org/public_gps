@@ -10,8 +10,8 @@ services:
     deploy:
       replicas: 2
       resources:
-      limits:
-        memory: 30M
+        limits:
+          memory: 30M
       # placement:
         # constraints:
           # - node.role == worker
