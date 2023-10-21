@@ -1,10 +1,13 @@
 const net = require('net');
 
-const SERVER_IP = '139.59.30.173'; //docker swarm entry point
-const SERVER_PORT = 1800;
+// const SERVER_IP = '139.59.30.173'; //docker swarm entry point
+// const SERVER_PORT = 1800;
+
+const SERVER_IP = '134.209.156.25'; //K5 entry point
+const SERVER_PORT = 31800;
 
 
-const CONNECTIONS = 2000;
+const CONNECTIONS = 1500;
 
 let serverCount = 1;
 
@@ -28,9 +31,9 @@ function connectAndSendData() {
     });
 
     client.on('connect', () => {
-        setInterval(() => {
-            client.write(DATA);
-        }, 1000 * 1);
+        // setInterval(() => {
+        //     client.write(DATA);
+        // }, 1000 * 1);
     });
 
     // client.on('data', (data) => {
