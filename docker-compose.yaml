@@ -11,9 +11,9 @@ services:
       replicas: 2
       restart_policy: 
         condition: any
-      resources:
-        limits:
-          memory: 30M
+      # resources:
+      #   limits:
+      #     memory: 30M
       # placement:
         # constraints:
           # - node.role == worker
