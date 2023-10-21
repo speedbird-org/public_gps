@@ -32,13 +32,22 @@ services:
         target: /etc/nginx/nginx.conf
     deploy:
       restart_policy:
-        condition: on-failure
-      replicas: 1
-      resources:
-        limits:
-          memory: 40M
-        reservations:
-          memory: 5M
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    resources:
+      limits:
+        memory: 40M
+    # deploy:
+    #   restart_policy:
+    #     condition: on-failure
+    #   replicas: 1
+    #   resources:
+    #     limits:
+    #       memory: 40M
+    #     reservations:
+    #       memory: 5M
       # placement:
       #   constraints:
       #     - node.labels.lb == yes
