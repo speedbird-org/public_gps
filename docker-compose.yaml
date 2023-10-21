@@ -8,11 +8,11 @@ services:
       - TASK_ID={{.Task.Slot}}
     command: node server.js
     deploy:
-      replicas: 4
-      placement:
-        constraints:
+      replicas: 2
+      # placement:
+        # constraints:
           # - node.role == worker
-          - node.labels.manager == yes
+          # - node.labels.manager == yes
 
     expose:
       - 1800
@@ -31,9 +31,9 @@ services:
       # resources:
       #   limits:
       #     memory: 50M
-      placement:
-        constraints:
-          - node.labels.lb == yes
+      # placement:
+      #   constraints:
+      #     - node.labels.lb == yes
     depends_on:
       - app 
     ports:
