@@ -31,14 +31,14 @@ services:
       - source: nginx_config
         target: /etc/nginx/nginx.conf
     deploy:
-      restart_policy:
+      restart_policy: 
         condition: any
         delay: 5s
         max_attempts: 3
         window: 120s
-    resources:
-      limits:
-        memory: 40M
+      resources:
+        limits:
+          memory: 40M
     # deploy:
     #   restart_policy:
     #     condition: on-failure
