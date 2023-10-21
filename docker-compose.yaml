@@ -9,9 +9,11 @@ services:
     command: node server.js
     deploy:
       replicas: 3
-      # resources:
-      #   limits:
-      #     memory: 30M
+      restart_policy: 
+        condition: any
+      resources:
+        limits:
+          memory: 30M
       # placement:
         # constraints:
           # - node.role == worker
