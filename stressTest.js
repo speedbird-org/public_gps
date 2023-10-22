@@ -5,7 +5,8 @@ const net = require('net');
 const SERVER_IP = '146.190.9.238'; //K5 entry point
 
 const SERVER_PORT = 1800;
-const CONNECTIONS = 8000;
+
+const CONNECTIONS = process.env.CONN ? parseInt(process.env.CONN) : 2000;
 
 let serverCount = 1;
 
