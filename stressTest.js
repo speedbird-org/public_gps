@@ -5,7 +5,7 @@ const net = require('net');
 const SERVER_IP = '146.190.9.238'; //K5 entry point
 
 const SERVER_PORT = 1800;
-const CONNECTIONS = 2500;
+const CONNECTIONS = 5000;
 
 let serverCount = 1;
 
@@ -51,7 +51,7 @@ function connectAndSendData() {
 
 async function connectAll() {
     for (let i = 0; i < CONNECTIONS; i++) {
-        await asyncSleep(1);
+        await asyncSleep(2);
         connectAndSendData();
     }
 
