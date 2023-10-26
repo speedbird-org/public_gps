@@ -39,19 +39,3 @@ spec:
       imagePullSecrets:
         - name: gcr-secret
 
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: lb-gps
-spec:
-  type: LoadBalancer
-  selector:
-    app: gps
-  ports:
-    - protocol: TCP
-      port: 1800
-      targetPort: 1800
-      # nodePort: 31800
-  externalIPs:
-    - 139.59.44.250
