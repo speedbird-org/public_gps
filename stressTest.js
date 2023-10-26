@@ -7,6 +7,7 @@ const SERVER_IP = '142.93.217.249'; //K5 entry point
 const SERVER_PORT = 1800;
 
 const CONNECTIONS = process.env.CONN ? parseInt(process.env.CONN) : 2000;
+const INTERVAL = process.env.INTERVAL ? parseInt(process.env.INTERVAL) : 0;
 
 let serverCount = 1;
 
@@ -30,9 +31,12 @@ function connectAndSendData() {
     });
 
     client.on('connect', () => {
-        // setInterval(() => {
-        //     client.write(DATA);
-        // }, 1000 * 1);
+
+        if (INTERVAL) {
+            setInterval(() => {
+                client.write(DATA);
+            }, 1000 * INTERVAL);
+        }
     });
 
     // client.on('data', (data) => {
