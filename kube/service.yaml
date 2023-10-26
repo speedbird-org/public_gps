@@ -12,4 +12,4 @@ spec:
       targetPort: 1800
       # nodePort: 31800
   externalIPs:
-    - 139.59.5.164
+    - 142.93.217.249
