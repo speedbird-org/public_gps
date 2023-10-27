@@ -10,7 +10,7 @@ spec:
     - protocol: TCP
       port: 1800
       targetPort: 1800
-      # nodePort: 31800
+      nodePort: 31800
   externalIPs:
     - 142.93.217.249
     - 144.126.255.213
