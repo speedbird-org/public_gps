@@ -50,9 +50,9 @@ services:
     #       memory: 40M
     #     reservations:
     #       memory: 5M
-      placement:
-        constraints:
-          - node.labels.lb == yes
+      # placement:
+      #   constraints:
+      #     - node.labels.lb == yes
     depends_on:
       - app 
     ports:
