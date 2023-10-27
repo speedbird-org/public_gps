@@ -32,15 +32,7 @@ services:
     configs:
       - source: nginx_config
         target: /etc/nginx/nginx.conf
-    deploy:
-      # restart_policy: 
-      #   condition: any
-      #   delay: 5s
-      #   max_attempts: 3
-      #   window: 120s
-      # resources:
-      #   limits:
-      #     memory: 50M
+        
     # deploy:
     #   restart_policy:
     #     condition: on-failure
