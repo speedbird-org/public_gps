@@ -4,6 +4,7 @@ metadata:
   name: lb-gps
 spec:
   type: LoadBalancer
+  loadBalancerIP: 144.126.255.213
   selector:
     app: gps
   ports:
@@ -14,4 +15,4 @@ spec:
   externalIPs:
     - 142.93.217.249
     - 144.126.255.213
-    
+
