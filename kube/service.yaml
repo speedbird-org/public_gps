@@ -5,7 +5,7 @@ metadata:
 spec:
   type: LoadBalancer
   # loadBalancerIP: 144.126.255.213
-  externalTrafficPolicy: Local
+  # externalTrafficPolicy: Local
   selector:
     app: gps
   ports:
@@ -14,6 +14,6 @@ spec:
       targetPort: 1800
       nodePort: 31800
   externalIPs:
-    - 142.93.217.249
+    # - 142.93.217.249
     - 144.126.255.213
 
