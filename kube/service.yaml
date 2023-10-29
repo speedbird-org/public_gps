@@ -6,7 +6,7 @@ metadata:
   #   metallb.universe.tf/loadBalancerIPs: 144.126.255.213
 spec:
   type: LoadBalancer
-  # loadBalancerIP: 144.126.255.213
+  loadBalancerIP: 144.126.255.213
   # externalTrafficPolicy: Local
   selector:
     app: gps
@@ -15,6 +15,6 @@ spec:
       port: 1800
       targetPort: 1800
       # nodePort: 31800
-  externalIPs:
-    - 144.126.255.213
+  # externalIPs:
+  #   - 144.126.255.213
 
