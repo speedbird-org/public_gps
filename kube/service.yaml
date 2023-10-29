@@ -4,8 +4,8 @@ metadata:
   name: lb-gps
   # annotations:
   #   metallb.universe.tf/loadBalancerIPs: 144.126.255.213
-  annotations:
-    metallb.universe.tf/allow-shared-ip: my-pool
+  # annotations:
+  #   metallb.universe.tf/allow-shared-ip: my-pool
 spec:
   type: LoadBalancer
   loadBalancerIP: 144.126.255.213
