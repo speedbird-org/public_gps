@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: lb-gps
-  annotations:
-    metallb.universe.tf/loadBalancerIPs: 144.126.255.213
+  # annotations:
+  #   metallb.universe.tf/loadBalancerIPs: 144.126.255.213
 spec:
   type: LoadBalancer
   # loadBalancerIP: 144.126.255.213

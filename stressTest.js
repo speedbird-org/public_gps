@@ -7,7 +7,7 @@ const SERVER_IP = '144.126.255.213'; //K5 REserved IP
 
 const SERVER_PORT = 1800;
 
-const CONNECTIONS = process.env.CONN ? parseInt(process.env.CONN) : 1500;
+const CONNECTIONS = process.env.CONN ? parseInt(process.env.CONN) : 2;
 const INTERVAL = process.env.INTERVAL ? parseInt(process.env.INTERVAL) : 0;
 
 let serverCount = 1;
