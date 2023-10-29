@@ -2,7 +2,7 @@ const net = require('net');
 
 // const SERVER_IP = '139.59.30.173'; //docker swarm entry point
 
-// const SERVER_IP = '142.93.217.249'; // K5 entry point
+// const SERVER_IP = '10.139.223.53'; // K5 entry point
 const SERVER_IP = '144.126.255.213'; //K5 REserved IP
 
 const SERVER_PORT = 1800;
