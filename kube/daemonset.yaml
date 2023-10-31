@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kube-cni
+  namespace: kube-system
+spec:
+  spec:
+    containers:
+    - name: kube-cni
+      image: digitalocean/cni:0.3.1
+      env:
+      - name: DOCKER_NETWORK_OPTIONS
+        value: --ip-masq=false --ip-forward=true
+      - name: CNI_CONF_NAME
+        value: 10-digitalocean.conflist
+
