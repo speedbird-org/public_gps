@@ -9,7 +9,7 @@ metadata:
 spec:
   type: LoadBalancer
   # loadBalancerIP: 144.126.255.213
-  externalTrafficPolicy: Cluster
+  # externalTrafficPolicy: Cluster
   selector:
     app: gps
   ports:
@@ -17,8 +17,8 @@ spec:
       port: 1800
       targetPort: 1800
       nodePort: 31800
-  # externalIPs:
+  externalIPs:
     # - 144.126.255.213
     # - 139.59.22.43
-    # - 10.139.223.53
+    - 10.139.223.53
 
