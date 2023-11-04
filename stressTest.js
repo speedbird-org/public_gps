@@ -5,7 +5,7 @@ const net = require('net');
 // const SERVER_IP = '10.139.223.53'; // K5 entry point
 const SERVER_IP = '144.126.255.213'; //K5 REserved IP
 
-const SERVER_PORT = 1800;
+const SERVER_PORT = 9964;
 
 const CONNECTIONS = process.env.CONN ? parseInt(process.env.CONN) : 1500;
 const INTERVAL = process.env.INTERVAL ? parseInt(process.env.INTERVAL) : 0;
