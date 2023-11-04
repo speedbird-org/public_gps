@@ -21,6 +21,13 @@ spec:
               value: "1"
           command: ["node", "server.js"]
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "100Mi"
+            #   cpu: "250m"
+            # limits:
+            #   memory: "1000Mi"
+              # cpu: "1000m"
           ports:
             - containerPort: 1800
       imagePullSecrets:
