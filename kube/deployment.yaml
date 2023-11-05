@@ -13,6 +13,23 @@ spec:
       labels:
         app: gps
     spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 60
+            preference:
+              matchExpressions:
+              - key: gpstrack.in/8cpu
+                operator: In
+                values:
+                - true
+          - weight: 40
+            preference:
+              matchExpressions:
+              - key: gpstrack.in/4cpu
+                operator: In
+                values:
+                - true
       containers:
         - name: gps-container
           image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
