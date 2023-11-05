@@ -19,7 +19,7 @@ spec:
           - weight: 90
             preference:
               matchExpressions:
-              - key: gpstrack.in/8cpu
+              - key: gpstrack.in/16cpu
                 operator: In
                 values:
                 - 'true'
