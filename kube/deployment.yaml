@@ -22,14 +22,14 @@ spec:
               - key: gpstrack.in/8cpu
                 operator: In
                 values:
-                - true
+                - 'true'
           - weight: 40
             preference:
               matchExpressions:
               - key: gpstrack.in/4cpu
                 operator: In
                 values:
-                - true
+                - 'true'
       containers:
         - name: gps-container
           image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
