@@ -16,14 +16,14 @@ spec:
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 60
+          - weight: 90
             preference:
               matchExpressions:
               - key: gpstrack.in/8cpu
                 operator: In
                 values:
                 - 'true'
-          - weight: 40
+          - weight: 10
             preference:
               matchExpressions:
               - key: gpstrack.in/4cpu
