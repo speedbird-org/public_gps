@@ -2,7 +2,7 @@ const net = require('net');
 
 const SERVER_ID = new Date().getTime();
 const PORT_COUNT = process.env.PORT_COUNT ? parseInt(process.env.PORT_COUNT) : 1;
-const MSG = `V8 TCP Server: `
+const MSG = `V8.1 TCP Server: `
 console.log(`PORT_COUNT: ${PORT_COUNT}`);
 
 
