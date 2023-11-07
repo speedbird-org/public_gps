@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: gps
 spec:
-  replicas: 10
+  replicas: 4
   revisionHistoryLimit: 0
   selector:
     matchLabels:
@@ -13,23 +13,23 @@ spec:
       labels:
         app: gps
     spec:
-      affinity:
-        nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 60
-            preference:
-              matchExpressions:
-              - key: gpstrack.in/16cpu
-                operator: In
-                values:
-                - 'true'
-          - weight: 40
-            preference:
-              matchExpressions:
-              - key: gpstrack.in/32cpu
-                operator: In
-                values:
-                - 'true'
+      # affinity:
+      #   nodeAffinity:
+      #     preferredDuringSchedulingIgnoredDuringExecution:
+      #     - weight: 60
+      #       preference:
+      #         matchExpressions:
+      #         - key: gpstrack.in/16cpu
+      #           operator: In
+      #           values:
+      #           - 'true'
+      #     - weight: 40
+      #       preference:
+      #         matchExpressions:
+      #         - key: gpstrack.in/32cpu
+      #           operator: In
+      #           values:
+      #           - 'true'
       containers:
         - name: gps-container
           image: asia-south1-docker.pkg.dev/gpstrack-2/fleettrack/test:latest
