@@ -2,7 +2,7 @@ version: "3"
 services:
   ftest:
     image: "ftesti"
-    command:  "ts-node index.ts"
+    # command:  "ts-node index.ts"
     # command: "node server.js"
     restart: always
     # container_name: "ftest"
