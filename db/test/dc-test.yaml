@@ -1,13 +1,14 @@
 version: "3"
 services:
   ftest:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: "ftesti"
     # command:  'npx ts-node index.ts'
     command: "node server.js"
     restart: always
-    container_name: "ftest"
+    # container_name: "ftest"
     logging:
       driver: "json-file"
       options:
