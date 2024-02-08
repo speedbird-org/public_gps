@@ -1,2 +1,2 @@
 #!/bin/bash
-docker-compose -f dc-test.yaml up -d
+docker-compose -f dc-db.yaml up -d
