@@ -1,4 +1,4 @@
-FROM node:18.16.1-slim
+FROM node:18.16.1-buster-slim
 RUN chown -R node /usr/local/lib/node_modules
 
 USER node
