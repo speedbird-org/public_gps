@@ -9,5 +9,3 @@ COPY package*.json ./
 RUN sudo npm install ts-node -g
 RUN npm install --production
 COPY --chown=node:node . .
-
-# CMD ["node","server.js"]
