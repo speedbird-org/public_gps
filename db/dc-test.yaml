@@ -2,7 +2,7 @@ version: '3'
 services:
   ftest:
     build: .
-    image: 'ftesti'
+    # image: 'ftesti'
     command:  'npx ts-node index.ts'
     restart: always
     container_name: 'ftest'
