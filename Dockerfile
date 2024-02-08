@@ -1,4 +1,4 @@
-FROM node:12.16.1-alpine3.11
+FROM node:lts-buster-slim
 RUN chown -R node /usr/local/lib/node_modules
 
 USER node

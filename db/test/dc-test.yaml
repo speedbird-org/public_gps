@@ -1,0 +1,21 @@
+version: '3'
+services:
+  fmc:
+    image: 'mongo:7.0.5'
+    command:  mongod --auth
+    restart: always
+    container_name: 'fmc'
+    environment:
+      - MONGO_INITDB_DATABASE=datadb
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=6Mye1i67eCxZlyZWW3XRH5mxvvR1Mata
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "6"
+        max-size: "50m"
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - /home/fleettrack/storage:/data/db
+    ports:
+      - 27017:27017

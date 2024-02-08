@@ -31,7 +31,7 @@ export async function populateRandomDataToDb() {
 
     for (let index = 1; index <= 10000; index++) {
 
-        let list = generateRandomData(10000);
+        let list = generateRandomData(1000);
         let res = await Promise.all([
             GpsDataModel.insertMany(list),
             GpsDataControlModel.insertMany(list),

@@ -3,7 +3,7 @@ import GpsDataControlModel from "./gpsdata-control";
 
 const deviceId = "2";
 //Feb 1 to Feb 10
-const startDate = "2024-02-01T18:30:00.177Z";
+const startDate = "2024-02-03T10:30:00.177Z";
 const limit = 1000;
 
 async function readGpsDataNew() {
@@ -23,7 +23,7 @@ async function readGpsDataOld() {
 
 export async function benchmarkReadOperation() {
     
-    readGpsDataOld();
+    // readGpsDataOld();
     readGpsDataNew();
     
     // readGpsDataNew();
