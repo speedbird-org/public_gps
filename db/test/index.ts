@@ -6,6 +6,9 @@ import { populateRandomDataToDb } from "./testInsert";
 import { benchmarkReadOperation } from "./testRead";
 
 
+console.log(`${new Date().toISOString()} Test server started...`);
+
+
 let mongoOptions: any = {
     // reconnectTries: Number.MAX_VALUE,
     // reconnectInterval: 1000,
