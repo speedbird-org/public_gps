@@ -38,7 +38,7 @@ export async function populateRandomDataToDb() {
         ]);
 
         // list = await GpsDataControlModel.find().lean();
-        console.log(`Inserted ${res[0].length} docs. index: ${index}`);
+        console.log(`Date: ${new Date().toISOString()}  Inserted ${res[0].length} docs. index: ${index}`);
     }
 
 }
