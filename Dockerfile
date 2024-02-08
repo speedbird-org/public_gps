@@ -9,4 +9,4 @@ COPY package*.json ./
 RUN npm install --production
 COPY --chown=node:node . .
 
-RUN npm run build
+# RUN npm run build
