@@ -12,4 +12,4 @@ RUN npm install --production
 COPY --chown=node:node . .
 
 
-RUN npx ts-node index.ts
+CMD ["npx","ts-node","index.ts"]
