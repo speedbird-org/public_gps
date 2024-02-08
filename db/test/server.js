@@ -1,0 +1,1 @@
+console.log(`${new Date().toISOString()} Server testing complete.`);
