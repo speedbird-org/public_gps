@@ -1,4 +1,4 @@
-FROM node:lts-buster-slim
+FROM node:18.16.1-slim
 RUN chown -R node /usr/local/lib/node_modules
 
 USER node
