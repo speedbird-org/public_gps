@@ -13,6 +13,10 @@ app.post('/test_api',(req,res)=>{
   res.send("Hello , Running test api");
 });
 
+app.get('/test_api',(req,res)=>{
+  res.send("Hello , Running test api in browser");
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}. Send a request to /`);
 });
