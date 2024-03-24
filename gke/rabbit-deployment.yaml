@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq-app
+  template:
+    metadata:
+      labels:
+        app: rabbitmq-app
+    spec:
+      containers:
+      - name: rabbitmq
+        image: rabbitmq:3.13-alpine
+        ports:
+        - containerPort: 5672
+        - containerPort: 15672
+        volumeMounts:
+        - name: rabbitmq-data
+          mountPath: /var/lib/rabbitmq
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: "fleettrack"
+        - name: RABBITMQ_DEFAULT_PASS
+          value: "fleettrack"
+      volumes:
+      - name: rabbitmq-data
+        emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: rabbitmq-app
+  ports:
+  - protocol: TCP
+    name: '5672'
+    port: 5672
+    targetPort: 5672
+  - protocol: TCP
+    name: '15672'
+    port: 15672
+    targetPort: 15672
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: rabbitmq-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: rabbitmq
+  ingress:
+  - {}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: rabbitmq-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
